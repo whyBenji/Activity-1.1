@@ -1,0 +1,21 @@
+/* styles.css */
+body {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+div.output_area {
+    width: 100%; /* Make output area full width */
+    overflow: hidden; /* Hide overflow to prevent scroll bars */
+}
+
+.figure {
+    width: 100% !important;  /* Force figures to take full width */
+    max-width: none; /* Prevent max-width from being set */
+}
+
+@media (max-width: 1200px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling on smaller screens */
+    }
+}
