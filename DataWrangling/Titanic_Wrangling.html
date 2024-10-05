@@ -3377,13 +3377,13 @@ vertical-align: -.125em;
 <li>What proportion of 3rd class passengers embarked at Southampton?</li>
 <li>What proportion of Southampton passengers were in 3rd class?</li>
 </ul>
-<div id="cell-13" class="cell" data-execution_count="8">
+<div id="cell-13" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>conDiv <span class="op">=</span> crossTab.div(crossTab.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>conDiv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -3432,30 +3432,85 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
+<div id="cell-14" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>conDiv <span class="op">=</span> crossTab.div(crossTab.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>conDiv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">embarked</th>
+<th data-quarto-table-cell-role="th">B</th>
+<th data-quarto-table-cell-role="th">C</th>
+<th data-quarto-table-cell-role="th">Q</th>
+<th data-quarto-table-cell-role="th">S</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">class</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1st</td>
+<td>0.333333</td>
+<td>0.527675</td>
+<td>0.024390</td>
+<td>0.191466</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2nd</td>
+<td>0.666667</td>
+<td>0.095941</td>
+<td>0.056911</td>
+<td>0.268053</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3rd</td>
+<td>0.000000</td>
+<td>0.376384</td>
+<td>0.918699</td>
+<td>0.540481</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 <ul>
 <li>What proportion of 3rd class passengers embarked at Southampton? 69.6%</li>
-<li>What proportion of Southampton passengers were in 3rd class? 69.6%</li>
+<li>What proportion of Southampton passengers were in 3rd class? 54.04%</li>
 </ul>
 </section>
 <section id="make-a-visualization-showing-the-distribution-of-a-passengers-class-given-where-they-embarked." class="level2">
 <h2 class="anchored" data-anchor-id="make-a-visualization-showing-the-distribution-of-a-passengers-class-given-where-they-embarked.">3. Make a visualization showing the distribution of a passenger’s class, given where they embarked.</h2>
 <p>Discuss the pros and cons of using this visualization versus the distributions you calculated before, to answer the previous questions.</p>
-<div id="cell-16" class="cell" data-execution_count="9">
+<div id="cell-17" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-17" class="cell" data-execution_count="10">
+<div id="cell-18" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sns.countplot(x=&#39;class&#39;, data = df)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">&#39;embarked&#39;</span>, hue<span class="op">=</span><span class="st">&#39;class&#39;</span>, palette<span class="op">=</span><span class="st">&#39;Set3&#39;</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Passenger Class by Embarkation Point&#39;</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Embarkation Point&#39;</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Passengers&#39;</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">&#39;Passenger Class&#39;</span>, loc<span class="op">=</span><span class="st">&#39;upper right&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sns.countplot(x=&#39;class&#39;, data = df)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">&#39;embarked&#39;</span>, hue<span class="op">=</span><span class="st">&#39;class&#39;</span>, palette<span class="op">=</span><span class="st">&#39;Set3&#39;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Distribution of Passenger Class by Embarkation Point&#39;</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Embarkation Point&#39;</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Passengers&#39;</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">&#39;Passenger Class&#39;</span>, loc<span class="op">=</span><span class="st">&#39;upper right&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
